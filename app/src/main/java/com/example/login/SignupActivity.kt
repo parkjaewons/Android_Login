@@ -19,6 +19,8 @@ class SignupActivity : AppCompatActivity() {
         val et_pw = findViewById<EditText>(R.id.et_signpw)
         val btn_sign = findViewById<Button>(R.id.signup)
 
+
+
         btn_sign.setOnClickListener {
             val name = et_name.text.toString()
             val id = et_id.text.toString()
@@ -32,6 +34,7 @@ class SignupActivity : AppCompatActivity() {
                 val intent =  Intent(this, SignInActivity::class.java)
                 intent.putExtra("id",id)
                 intent.putExtra("password", pw)
+                intent.putExtra("name",name)
                 startActivity(intent)
             }
         }
