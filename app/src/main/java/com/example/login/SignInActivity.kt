@@ -16,9 +16,9 @@ class SignInActivity : AppCompatActivity() {
         val btn_Signup = findViewById<Button>(R.id.btn_signup)
         val btn_login = findViewById<Button>(R.id.btn_login)
 
-        var strid = intent.getStringExtra("id").toString()
-        var strpw = intent.getStringExtra("password").toString()
-        var strname = intent.getStringExtra("name").toString()
+        val strid = intent.getStringExtra("id").toString()
+        val strpw = intent.getStringExtra("password").toString()
+        val strname = intent.getStringExtra("name").toString()
 
         // 회원가입 버튼
         btn_Signup.setOnClickListener {
@@ -27,18 +27,18 @@ class SignInActivity : AppCompatActivity() {
         }
         // 로그인버튼
         btn_login.setOnClickListener {
-            var ip_id = input_id.text.toString()
-            var ip_pw = input_pw.text.toString()
+            val ip_id = input_id.text.toString()
+            val ip_pw = input_pw.text.toString()
 
             if (ip_id.isEmpty() || ip_pw.isEmpty()) {
                 Toast.makeText(this, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
             }
             else if((ip_id == strid) && (ip_pw == strpw)){
                     Toast.makeText(this, "로그인 성공!", Toast.LENGTH_SHORT).show()
-                    val intent2 = Intent(this, HomeActivity::class.java)
+                    val intent = Intent(this, HomeActivity::class.java)
                     intent.putExtra("id",strid)
                     intent.putExtra("name",strname)
-                    startActivity(intent2)
+                    startActivity(intent)
             }
             else{
                 Toast.makeText(this, "아이디와 비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show()
