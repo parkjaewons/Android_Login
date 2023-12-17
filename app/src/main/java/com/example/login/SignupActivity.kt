@@ -19,8 +19,7 @@ class SignupActivity : AppCompatActivity() {
         val et_pw = findViewById<EditText>(R.id.et_signpw)
         val btn_sign = findViewById<Button>(R.id.signup)
 
-
-
+        //회원가입 기능
         btn_sign.setOnClickListener {
             val name = et_name.text.toString()
             val id = et_id.text.toString()
