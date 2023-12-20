@@ -31,7 +31,7 @@ class SignInActivity : AppCompatActivity() {
             val intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
         }
-        // 로그인버튼
+        // 로그인 버튼
         btn_login.setOnClickListener {
             val ip_id = input_id.text.toString()
             val ip_pw = input_pw.text.toString()
